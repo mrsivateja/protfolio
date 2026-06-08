@@ -94,14 +94,7 @@ const Contact = () => {
               >
                 <Instagram className="w-5 h-5" />
               </a>
-              <a
-                href="https://wa.me/9491256991"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/20 transition-all"
-              >
-                <MessageCircle className="w-5 h-5" />
-              </a>
+             
             </div>
           </motion.div>
         </div>

@@ -1,7 +1,16 @@
 import React, { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const InteractiveBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const location = useLocation();
+  const isCursorHidden = location.pathname !== '/graphify';
+  const isCursorHiddenRef = useRef(isCursorHidden);
+
+  useEffect(() => {
+    isCursorHiddenRef.current = isCursorHidden;
+    document.body.style.cursor = isCursorHidden ? 'none' : 'auto';
+  }, [isCursorHidden]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -94,16 +103,18 @@ const InteractiveBackground: React.FC = () => {
         }
       });
 
-      // Draw Sphere Cursor
-      const gradient = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 15);
-      gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
-      gradient.addColorStop(0.4, 'rgba(41, 224, 209, 0.8)');
-      gradient.addColorStop(1, 'rgba(41, 224, 209, 0)');
+      // Draw Sphere Cursor if cursor is hidden
+      if (isCursorHiddenRef.current) {
+        const gradient = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 15);
+        gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
+        gradient.addColorStop(0.4, 'rgba(41, 224, 209, 0.8)');
+        gradient.addColorStop(1, 'rgba(41, 224, 209, 0)');
 
-      ctx.beginPath();
-      ctx.arc(mouse.x, mouse.y, 15, 0, Math.PI * 2);
-      ctx.fillStyle = gradient;
-      ctx.fill();
+        ctx.beginPath();
+        ctx.arc(mouse.x, mouse.y, 15, 0, Math.PI * 2);
+        ctx.fillStyle = gradient;
+        ctx.fill();
+      }
 
       animationFrameId = requestAnimationFrame(animate);
     };
@@ -113,8 +124,6 @@ const InteractiveBackground: React.FC = () => {
 
     handleResize();
     animate();
-
-    document.body.style.cursor = 'none';
 
     return () => {
       window.removeEventListener('resize', handleResize);
