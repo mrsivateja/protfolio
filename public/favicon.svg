@@ -1,1 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200"><rect width="200" height="200" fill="url('#gradient')"></rect><defs><linearGradient id="gradient" gradientTransform="rotate(45 0.5 0.5)"><stop offset="0%" stop-color="#9b6e9c"></stop><stop offset="100%" stop-color="#c18fe3"></stop></linearGradient></defs><g><g fill="#843082" transform="matrix(6.610989010989011,0,0,6.610989010989011,58.384880441885734,147.00350761727972)" stroke="#c9469f" stroke-width="0"><path d="M12.24-14.22L12.24-11.57L7.97-11.57L7.97 0L4.54 0L4.54-11.57L0.35-11.57L0.35-14.22L12.24-14.22Z"></path></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="tj-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14b8a6" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+  </defs>
+  <!-- Rounded high-tech background -->
+  <rect width="512" height="512" rx="128" fill="#0b0f19" stroke="url(#tj-gradient)" stroke-width="16" />
+  <!-- Minimalist stylized 'T' and 'J' -->
+  <g fill="none" stroke="url(#tj-gradient)" stroke-linecap="round" stroke-linejoin="round" stroke-width="44">
+    <!-- Letter T -->
+    <path d="M140 180h140M210 180v180" />
+    <!-- Letter J -->
+    <path d="M310 180v130c0 30-20 50-50 50-15 0-30-7-35-15" />
+  </g>
+</svg>

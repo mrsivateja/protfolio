@@ -74,14 +74,10 @@ const About = () => {
 
             <div className="glass-card rounded-2xl p-8 hover-glow">
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Hey there! I'm a passionate BTech 2nd year Computer Science student with the specialization
-                in AI with a love for building things that live on the internet. I enjoy
-                creating everything from small websites to full-stack applications.
+                Teja Jetti is an AI Developer and MERN Stack Developer from India. Currently pursuing his B.Tech in Computer Science and Engineering with a specialization in Artificial Intelligence, he has developed a deep-rooted passion for AI and full-stack development. 
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                My journey in tech started with curiosity about how websites work,
-                which led me to explore web development, and now I'm diving deep into
-                full-stack development and exploring the world of AI.
+                Teja specializes in bridging the gap between intelligent algorithms and modern web architectures. With a strong interest in open-source collaboration and a natural drive for problem solving, he focuses on building impactful products that deliver practical value and seamless experiences to users.
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
                 {traits.map((trait, index) => (

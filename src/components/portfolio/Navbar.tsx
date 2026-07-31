@@ -8,6 +8,7 @@ const navItems = [
   { label: "About", href: "#about", isRoute: false },
   { label: "Skills", href: "#skills", isRoute: false },
   { label: "Projects", href: "#projects", isRoute: false },
+  { label: "Experience", href: "#experience", isRoute: false },
   { label: "Education", href: "#education", isRoute: false },
   { label: "Contact", href: "#contact", isRoute: false },
   { label: "Graphify", href: "/graphify", isRoute: true },
@@ -78,9 +79,10 @@ const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "glass-card py-4" : "py-6"
       }`}
+      aria-label="Global Navigation"
     >
       <div className="container px-6 flex items-center justify-between">
-        <Link to="/" className="text-2xl font-bold gradient-text">
+        <Link to="/" className="text-2xl font-bold gradient-text" aria-label="Teja Jetti Homepage">
           TJ
         </Link>
 
@@ -93,6 +95,7 @@ const Navbar = () => {
             size="sm"
             className="bg-primary text-primary-foreground hover:bg-primary/90"
             onClick={() => window.open("/resume.pdf", "_blank")}
+            aria-label="View Resume PDF"
           >
             Resume
           </Button>
@@ -104,6 +107,8 @@ const Navbar = () => {
           size="icon"
           className="md:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-expanded={isMenuOpen}
+          aria-label="Toggle navigation menu"
         >
           {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </Button>
